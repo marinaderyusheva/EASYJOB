@@ -1,0 +1,22 @@
+{% extends 'mainapp/layout.html' %}
+{% load static %}
+{% block title %}Фрилансеры{% endblock %}
+
+
+{% block content %}
+<div class="features">
+<h1>Фрилансеры</h1>
+    <a href="{% url 'add_freelancer' %}"><button class="btn btn-info">Добавить резюме</button></a>
+{% if freelancers %}
+{% for el in freelancers %}
+    <div class="alert alert-warning">
+        <h1>{{ el.name_freelance }}</h1>
+        <p>{{ el.sphere }}</p>
+        <p>{{ el.about_freelance }}</p>
+    </div>
+{% endfor %}
+{% else %}
+    <p>Пока нет свободных фрилансеров</p>
+{% endif %}
+</div>
+{% endblock %}

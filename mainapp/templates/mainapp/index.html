@@ -1,0 +1,110 @@
+
+<!--шаблон наследует родительский шаблон layout-->
+{% extends 'mainapp/layout.html' %}
+{% load static %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <br><br>
+ <!--слайд welcome-->
+      <div id="headerwrap">
+
+      <div class="container">
+        <br>
+        <h1>Привет!</h1>
+        <p>Мы компания EASYJOB! Мы предоставляем платформу, на которой ты сможешь найти как подходящие для себя вакансии,
+            так и подобрать себе в команду работника. Мы работаем по 3 направлениям: маркетинг, программирование и дизайн. Если
+            тебе они подходят, то предлагаем зарегистрироваться и стать частью нашей большой семьи!
+        </p>
+        <p><a href="#" class="btn btn-success btn-lg">Зарегистрироваться &raquo</a></p>
+      </div>
+
+  </div>
+  <br>
+    <div class="container w">
+      <div clas="row">
+        <div class="col-md-4">
+          <h2><i class="bi bi-bar-chart-line"></i> Маркетинг</h2>
+          <p>Маркетинг – это деятельность, которая ставит своей целью получение прибыли с помощью удовлетворения потребностей покупателей.
+            Это очень обобщенное определение, показывающее суть любых маркетинговых мероприятий – умение продать товар или услугу целевой аудитории.</p>
+          <p><a href="#" class="btn btn-primary btn-lg">Узнать больше &raquo</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2><i class="bi bi-box"></i> Дизайн</h2>
+          <p>Дизайн — деятельность по проектированию эстетических свойств промышленных изделий, а также результат этой деятельности. </p>
+          <p><a href="#" class="btn btn-primary btn-lg">Узнать больше &raquo</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2><i class="bi bi-braces"></i> Программирование</h2>
+          <p>По выражению одного из основателей языков программирования Никлауса Вирта «Программы = алгоритмы + структуры данных»</p>
+          <p><a href="#" class="btn btn-primary btn-lg">Узнать больше &raquo</a></p>
+        </div>
+      </div>
+    </div>
+      <br><br>
+      <div id="dg">
+        <div class="container">
+          <div class="row center">
+            <h4>Отзывы наших клиентов</h4>
+            <br>
+            <div class="col-md-4">
+              <div class="tilt">
+                <div class="container">
+                  <h1>Маша</h1>
+                  <p>Спасибо, всё очень круто!</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="tilt">
+                <div class="container">
+                  <h1>Маша</h1>
+                  <p>Спасибо, всё очень круто!</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="tilt">
+                <div class="container">
+                  <h1>Маша</h1>
+                  <p>Спасибо, всё очень круто!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <div class="panel-group" id="collapse-group">
+        <div class="row center">
+          <h4>Часто задаваемые вопросы</h4>
+        </div>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#collapse-group" href="#el1">Почему люди выбирают нас?</a>
+          </div>
+        <div id="el1" class="collapse">
+          <div class="panel-body">Потому что мы вот такая крутая компания.</div>
+          </div>
+        </div>
+
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#collapse-group" href="#el2">Сколько людей с нами зарабатывают?</a>
+          </div>
+          <div id="el2" class="collapse">
+            <div class="panel-body">Мульоны людей</div>
+            </div>
+        </div>
+    </div>
+      <hr>
+      <footer>
+        <p>&copy: Все права защищены 2023</p>
+      </footer>
+
+      <!-- jQuery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+      <!-- JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+{% endblock %}

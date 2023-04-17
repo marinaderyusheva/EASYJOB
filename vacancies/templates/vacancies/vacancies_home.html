@@ -1,0 +1,23 @@
+{% extends 'mainapp/layout.html' %}
+{% load static %}
+{% block title %}Вакансии{% endblock %}
+
+{% block content %}
+    <br><br>
+    <div class="features">
+    <h1>Вакансии</h1>
+        <a href="{% url 'add_vacancii' %}"><button class="btn btn-info">Добавить вакансию</button></a>
+    {% if vacancii %}
+    {% for el in vacancii %}
+        <div class="alert alert-warning">
+        <h3>{{ el.title_vacancii }}</h3>
+            <p>{{ el.sphere }}</p>
+            <p>{{ el.about_vacancii }}</p>
+            <a href="{% url 'vacancii-detail' el.id %}" class="btn btn-warning">Подробнее</a>
+        </div>
+    {% endfor %}
+    {% else %}
+    <p>Активных вакансий нет</p>
+    {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>EASYJOB</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- Подключаем CSS от BootStrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Подключаем основной файл css -->
+    <link rel="stylesheet" href="/static/mainapp/css/mainapp.css">
+    <!--Иконка на вкладке в браузере-->
+    <link rel="shortcut icon" href="/static/mainapp/img/favicon/favicon-32x32.png" type="png">
+
+</head>
+<body>
+   <!-- Шапка сайта inverse-черный fixed-фиксация сверху -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+       <!-- fluid-растянут по всему экрану -->
+        <div class="container-fluid">
+          <div class="navbar-header">
+             <!--кнопка для открытия меню в телефоне; data-target-название того, что будет открываться -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+              <!--Три полоски для меню-->
+                  <span class="sr-only">Навигация</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <!--Иконка и название сайта-->
+                <img src="{% static 'mainapp/img/favicon/favicon.ico' %}" alt="Лого" class="d-inline-block align-top">
+
+            <a class="navbar-brand" href="{% url 'home' %}">EASYJOB</a>
+              </div>
+          <!--Раскрывающееся меню-->
+          <div class="collapse navbar-collapse" id="menu">
+            <ul class="nav navbar-nav">
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Фрилансеры <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{% url 'freelancers_home' %}">Просмотреть всех </a></li>
+                  <li class="divider"></li>
+                  <li><a href="{% url 'add_freelancer' %}">Добавить резюме</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Вакансии <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{% url 'vacancies_home' %}">Просмотреть все</a></li>
+                  <li class="divider"></li>
+                  <li><a href="{% url 'add_vacancii' %}">Добавить вакансию</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Поиск">
+              </div>
+              <button type="submit" class="btn btn-default btn-warning">Поиск</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Авторизация </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Регистрация</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Вход</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+<main>{% block content %}
+{% endblock %}</main>
+    <!--не включен плагин JavaScript-->
+    <noscript> Подключите JavaScript </noscript>
+    <!--Подключение файла js-->
+    <script type="text/javascript" src="/static/mainapp/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{% extends 'mainapp/layout.html' %}
+{% load static %}
+{% block title %}Добавление вакансии{% endblock %}
+
+{% block content %}
+    <br><br>
+<div class="features">
+<h1>Добавление вакансии</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.title_vacancii }}<br>
+    {{ form.sphere }}<br>
+    {{ form.about_vacancii }}<br>
+    {{ form.time_create }}<br>
+    <span>{{ error }}</span>
+    <button class="btn btn-success" type="submit">Добавить вакансию</button>
+</form>
+</div>
+{% endblock %}

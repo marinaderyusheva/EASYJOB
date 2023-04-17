@@ -1,0 +1,22 @@
+{% extends 'mainapp/layout.html' %}
+{% load static %}
+{% block title %}Анкета фрилансера{% endblock %}
+
+{% block content %}
+    <br><br>
+<div class="features">
+<h1>Анкета фрилансера</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.name_freelance }}<br>
+    {{ form.surname_freelance }}<br>
+    {{ form.age_freelance }}<br>
+    {{ form.sphere }}<br>
+    {{ form.about_freelance }}<br>
+    {{ form.time_create }}<br>
+    <!--Проверка на сервере-->
+    <span>{{ error }}</span>
+    <button class="btn btn-success" type="submit">Готово</button>
+</form>
+</div>
+{% endblock %}
